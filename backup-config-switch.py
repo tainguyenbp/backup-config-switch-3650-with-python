@@ -65,7 +65,7 @@ def send_api_telegram_bot_failed(CONTENT_DETAIL):
     SEND_MESSAGE_BOT_FAILED = '/sendMessage'
     HTTPS_API_TELEGRAM_BOT_FAILED = 'https://api.telegram.org/bot'
     API_TELEGRAM_BOT_FAILED = HTTPS_API_TELEGRAM_BOT_FAILED + STRING_TOKEN_HTTP_API_BOT_FAILED + SEND_MESSAGE_BOT_FAILED
-    CHAT_ID = '-357535597'
+    CHAT_ID = '-123456789'
 
     header={'Content-Type': 'application/json'}
     body="""{
@@ -81,7 +81,7 @@ def send_api_telegram_bot_true(CONTENT_DETAIL):
     SEND_MESSAGE_BOT_TRUE = '/sendMessage'
     HTTPS_API_TELEGRAM_BOT_TRUE = 'https://api.telegram.org/bot'
     API_TELEGRAM_BOT_TRUE = HTTPS_API_TELEGRAM_BOT_TRUE + STRING_TOKEN_HTTP_API_BOT_TRUE + SEND_MESSAGE_BOT_TRUE
-    CHAT_ID = '-357535597'
+    CHAT_ID = '-987654321'
 
     header={'Content-Type': 'application/json'}
     body="""{
@@ -101,7 +101,7 @@ def _copy_running_config_to_tftp_server():
         net_connect = ConnectHandler(**cisco_ios)
 
         path_sub_directory_tftp_server = '/switch-hclp-rtrcor01/config-'+year_month_day+'/'
-        tftp_server = 'tftp://192.168.11.67'+path_sub_directory_tftp_server+'running-config-hclp-rtrcor01-'+year_month_day+'-'+hour_munites_second
+        tftp_server = 'tftp://192.168.10.10'+path_sub_directory_tftp_server+'running-config-hclp-rtrcor01-'+year_month_day+'-'+hour_munites_second
 
         command_copy_running_config_tftp = 'copy running-config '+tftp_server
 
@@ -137,7 +137,7 @@ def _copy_startup_config_to_tftp_server():
         net_connect = ConnectHandler(**cisco_ios)
 
         path_sub_directory_tftp_server = '/switch-hclp-rtrcor01/config-'+year_month_day+'/'
-        tftp_server = 'tftp://192.168.1.10'+path_sub_directory_tftp_server+'startup-config-hclp-rtrcor01-'+year_month_day+'-'+hour_munites_second
+        tftp_server = 'tftp://192.168.10.10'+path_sub_directory_tftp_server+'startup-config-hclp-rtrcor01-'+year_month_day+'-'+hour_munites_second
 
         command_copy_startup_config_tftp = 'copy startup-config '+tftp_server
         result_run_command = net_connect.send_command(command_copy_startup_config_tftp, expect_string=r'Address or name of remote host')
